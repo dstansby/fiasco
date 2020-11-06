@@ -56,3 +56,9 @@ def test_non_ion_sources(ascii_dbase_root, filename):
     for h, unit in zip(parser.headings, parser.units):
         assert table[h].unit == unit
     assert table.meta['filename'] == filename
+
+
+def test_create_hdf5_dbase(hdf5_dbase_root):
+    # Calling the hdf5_dbase_root fixture implicitly runs the to_hdf5() method
+    # for all the sources, providing a smoke test for them.
+    pass
